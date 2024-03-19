@@ -13,70 +13,52 @@ const options = {
   },
 };
 
+// Trending movies
+
 export const getTrendingMovies = async (timeWindow) => {
-  try {
-    const { data } = await axios.get(
-      `${BASE_URL}/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`,
-      options
-    );
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await axios.get(
+    `${BASE_URL}/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`,
+    options
+  );
+  return data;
 };
 
 // Search movie
 
 export const getSearchMovie = async (query, page) => {
-  try {
-    const { data } = await axios.get(
-      `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`,
-      options
-    );
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await axios.get(
+    `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`,
+    options
+  );
+  return data;
 };
 
 // Movie details
 
 export const getMovieDetails = async (movie_id) => {
-  try {
-    const { data } = await axios.get(
-      `${BASE_URL}/movie/${movie_id}?language=en-US&api_key=${API_KEY}`,
-      options
-    );
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await axios.get(
+    `${BASE_URL}/movie/${movie_id}?language=en-US&api_key=${API_KEY}`,
+    options
+  );
+  return data;
 };
 
 // Movie credits
 
 export const getMovieCredits = async (movie_id) => {
-  try {
-    const { data } = await axios.get(
-      `${BASE_URL}/movie/${movie_id}/credits?language=en-US&api_key=${API_KEY}`,
-      options
-    );
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await axios.get(
+    `${BASE_URL}/movie/${movie_id}/credits?language=en-US&api_key=${API_KEY}`,
+    options
+  );
+  return data;
 };
 
 // Movie reviews
 
 export const getMovieReviews = async (movie_id) => {
-  try {
-    const { data } = await axios.get(
-      `${BASE_URL}/movie/${movie_id}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
-      options
-    );
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await axios.get(
+    `${BASE_URL}/movie/${movie_id}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
+    options
+  );
+  return data;
 };
