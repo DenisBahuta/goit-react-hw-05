@@ -1,5 +1,5 @@
 import "./App.css";
-// import moviesData from "../services/application";
+// import moviesData from "../../services/application";
 import { NavLink, Route, Routes } from "react-router-dom";
 
 function App() {

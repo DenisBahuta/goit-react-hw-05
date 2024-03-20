@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.themoviedb.org/3";
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
 const API_KEY = "b53f881ee0d71e8143f1e1c4cce07062";
 
 // мой токен
@@ -17,7 +17,7 @@ const options = {
 
 export const getTrendingMovies = async (timeWindow) => {
   const { data } = await axios.get(
-    `${BASE_URL}/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`,
+    `/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -27,7 +27,7 @@ export const getTrendingMovies = async (timeWindow) => {
 
 export const getSearchMovie = async (query, page) => {
   const { data } = await axios.get(
-    `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`,
+    `/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -37,7 +37,7 @@ export const getSearchMovie = async (query, page) => {
 
 export const getMovieDetails = async (movie_id) => {
   const { data } = await axios.get(
-    `${BASE_URL}/movie/${movie_id}?language=en-US&api_key=${API_KEY}`,
+    `/movie/${movie_id}?language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -47,7 +47,7 @@ export const getMovieDetails = async (movie_id) => {
 
 export const getMovieCredits = async (movie_id) => {
   const { data } = await axios.get(
-    `${BASE_URL}/movie/${movie_id}/credits?language=en-US&api_key=${API_KEY}`,
+    `/movie/${movie_id}/credits?language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -57,7 +57,7 @@ export const getMovieCredits = async (movie_id) => {
 
 export const getMovieReviews = async (movie_id) => {
   const { data } = await axios.get(
-    `${BASE_URL}/movie/${movie_id}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
+    `/movie/${movie_id}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
     options
   );
   return data;
