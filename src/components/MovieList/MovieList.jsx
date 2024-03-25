@@ -1,20 +1,29 @@
 import { Link, useLocation } from "react-router-dom";
-import css from "./ProductList.module.css";
+import css from "./MovieList.module.css";
 
-export const MovieList = ({ movies }) => {
+const MovieList = ({ movies = [] }) => {
   const location = useLocation();
 
   return (
-    <div className={css.container}>
-      {movies.map((movie) => (
-        <div key={movie.id} className={css.cardWrapper}>
-          <Link to={`${movie.id}`} state={{ from: location }}>
-            <img src='https://via.placeholder.com/200x100' alt='' />
-            <h3 className={css.movieName}>{movie.name}</h3>
-          </Link>
-        </div>
-      ))}
-    </div>
+    <>
+      {movies.length > 0 ? (
+        <ul className={css.container}>
+          {movies.map((movie) => (
+            <li key={movie.id} className={css.movieId}>
+              <Link
+                className={css.movieDetails}
+                state={location}
+                to={`/movies/${movie.id}`}
+              >
+                {movie.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={css.movieInfo}>Information is not available...</p>
+      )}
+    </>
   );
 };
 

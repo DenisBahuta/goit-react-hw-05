@@ -1,10 +1,10 @@
 const ErrorMessage = ({ message = "" }) => {
   return (
-    <p>
+    <b>
       {message.length > 0
         ? message
         : "❌ Whoops, something went wrong! Please try reloading this page!"}
-    </p>
+    </b>
   );
 };
 

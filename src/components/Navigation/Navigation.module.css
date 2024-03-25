@@ -1,0 +1,17 @@
+.header {
+  background-color: rgb(224, 255, 255);
+  padding: 16px 24px;
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.link {
+  display: inline-block;
+  color: blue;
+  text-decoration: none;
+  font-weight: 600;
+}

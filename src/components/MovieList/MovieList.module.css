@@ -1,21 +1,24 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 16px;
+  padding-left: 60px;
+  padding-top: 30px;
 }
 
-.cardWrapper {
-  border: 1px solid black;
-  border-radius: 4px;
+.movieId {
+  padding-top: 5px;
 }
 
-.cardWrapper a {
+.movieDetails {
   text-decoration: none;
+  color: #0555a4;
+  font-weight: bold;
 }
 
-.productName {
-  padding: 4px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  color: black;
+.movieDetails:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.movieInfo {
+  font-style: italic;
+  color: #999;
 }

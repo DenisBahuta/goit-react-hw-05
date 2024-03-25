@@ -15,9 +15,9 @@ const options = {
 
 // Trending movies
 
-export const getTrendingMovies = async (timeWindow) => {
+export const getTrendingMovies = async () => {
   const { data } = await axios.get(
-    `/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`,
+    `/trending/movie/day?language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -25,9 +25,9 @@ export const getTrendingMovies = async (timeWindow) => {
 
 // Search movie
 
-export const getSearchMovie = async (query, page) => {
+export const getSearchMovie = async (query) => {
   const { data } = await axios.get(
-    `/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`,
+    `/search/movie?query=${query}&include_adult=false&language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -35,9 +35,9 @@ export const getSearchMovie = async (query, page) => {
 
 // Movie details
 
-export const getMovieDetails = async (movie_id) => {
+export const getMovieDetails = async (movieId) => {
   const { data } = await axios.get(
-    `/movie/${movie_id}?language=en-US&api_key=${API_KEY}`,
+    `/movie/${movieId}?language=en-US&api_key=${API_KEY}`,
     options
   );
   return data;
@@ -45,20 +45,30 @@ export const getMovieDetails = async (movie_id) => {
 
 // Movie credits
 
-export const getMovieCredits = async (movie_id) => {
+export const getMovieCredits = async (movieId) => {
   const { data } = await axios.get(
-    `/movie/${movie_id}/credits?language=en-US&api_key=${API_KEY}`,
+    `/movie/${movieId}/credits?language=en-US&api_key=${API_KEY}`,
+    options
+  );
+  const actingCast = data.cast.filter(
+    (actor) => actor.known_for_department === "Acting"
+  );
+  return actingCast;
+};
+
+// Movie reviews
+
+export const getMovieReviews = async (movieId) => {
+  const { data } = await axios.get(
+    `/movie/${movieId}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
     options
   );
   return data;
 };
 
-// Movie reviews
-
-export const getMovieReviews = async (movie_id) => {
-  const { data } = await axios.get(
-    `/movie/${movie_id}/reviews?language=en-US&page=1&api_key=${API_KEY}`,
-    options
-  );
-  return data;
+export const getImage = (image) => {
+  if (!image || image === null || image === "") {
+    return "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=1800";
+  }
+  return `https://image.tmdb.org/t/p/w500${image}`;
 };
