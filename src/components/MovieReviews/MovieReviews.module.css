@@ -35,8 +35,10 @@
 }
 
 .infoMessage {
+  padding: 5px 15px;
+  display: block;
   font-size: 16px;
-  color: var(--dark-green);
-  text-align: center;
-  margin-bottom: 24px;
+  background-color: rgba(205, 92, 92);
+  color: white;
+  border-radius: 8px;
 }
