@@ -12,10 +12,14 @@ const Navigation = () => {
     <div>
       <header className={css.header}>
         <NavLink className={getNavLinkClassNames} to='/'>
-          <button type='submit'>Home</button>
+          <button className={css.link} type='submit'>
+            Home
+          </button>
         </NavLink>
         <NavLink className={getNavLinkClassNames} to='/movies' end>
-          <button type='submit'> Movies</button>
+          <button className={css.link} type='submit'>
+            Movies
+          </button>
         </NavLink>
       </header>
     </div>

@@ -3,70 +3,38 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
-  margin-bottom: 24px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
-.movieInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.movieScore {
+  margin-bottom: 30px;
+}
+
+.overview {
+  margin-bottom: 30px;
 }
 
 .movieImg {
-  border: 2px solid var(--main-green);
+  border: 1px solid aqua;
   width: 280px;
 }
 
 .genres {
   display: flex;
-  gap: 15px;
+  flex-direction: column;
 }
 
 .addInfo {
   display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  margin-bottom: 24px;
-  border-top: 4px solid var(--dark-green);
-  border-bottom: 4px solid var(--dark-green);
-  background: var(--main-green);
-  color: var(--white);
 }
 
 .addLinks {
   display: flex;
   align-items: center;
-  padding: 10px 0;
-  gap: 30px;
-  background-color: var(--main-green);
-  padding: 20px;
-}
-
-.addItems {
-  display: flex;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--main-green);
-  border: 1px solid var(--light-green);
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.addItems:hover {
-  color: var(--dark-green);
-  background-color: var(--main-yellow);
-  border: 1px solid var(--main-green);
-}
-
-.active {
-  color: var(--dark-green);
-  background-color: var(--main-yellow);
-  border: 1px solid var(--main-green);
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 30px;
 }
 
 .infoMessage {
@@ -74,47 +42,45 @@
   color: var(--dark-green);
   text-align: center;
   margin-bottom: 24px;
+  list-style-type: none;
 }
 
-.goBack {
+/* кнопка */
+
+.link {
   display: inline-block;
   margin-top: 24px;
   margin-left: 24px;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--main-green);
-  border: 1px solid var(--light-green);
-  border-radius: 8px;
-  transition: all 0.3s;
+  font-weight: 500;
+  background-color: rgb(240, 255, 240);
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
-.goBack:hover {
-  color: var(--dark-green);
-  background-color: var(--main-yellow);
-  border: 1px solid var(--main-green);
+.link:hover,
+.link:focus {
+  color: rgb(220, 20, 60);
 }
 
-@media screen and (min-width: 768px) {
-  .movieImg {
-    width: 350px;
-  }
+.linkButton {
+  font-weight: 500;
+  background-color: rgb(240, 255, 240);
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
-@media screen and (min-width: 1024px) {
-  .movieImg {
-    width: 500px;
-  }
+.linkButton:hover,
+.linkButton:focus {
+  color: rgb(220, 20, 60);
 }
 
-@media screen and (max-width: 624px) {
-  .mainMovieInfo {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 424px) {
-  .addInfo {
-    flex-direction: column;
-  }
+.linkButtonContainer {
+  display: flex;
+  gap: 12px;
+  position: relative;
+  margin-top: 24px;
+  margin-left: 26px;
+  list-style-type: none;
 }

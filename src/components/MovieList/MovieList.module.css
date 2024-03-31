@@ -1,5 +1,5 @@
 .container {
-  padding-left: 60px;
+  padding-left: 40px;
   padding-top: 30px;
 }
 
@@ -21,4 +21,10 @@
 .movieInfo {
   font-style: italic;
   color: #999;
+}
+
+/* Маркировка точками */
+
+ul {
+  list-style-type: disc;
 }

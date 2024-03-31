@@ -60,8 +60,10 @@ const MovieDetailsPage = () => {
         !isError &&
         (movieData ? (
           <div>
-            <Link className={css.goBack} to={backLinkRef.current}>
-              <button type='submit'>Go back </button>
+            <Link to={backLinkRef.current}>
+              <button className={css.link} type='submit'>
+                Go back
+              </button>
             </Link>
             <div className={css.mainMovieInfo}>
               <img
@@ -74,10 +76,10 @@ const MovieDetailsPage = () => {
                 <h1>
                   {movieData.title} ({year})
                 </h1>
-                <p>User Score: {vote}% </p>
+                <p className={css.movieScore}>User Score: {vote}% </p>
                 <span>
                   <h2>Overview:</h2>
-                  <p>{movieData.overview}</p>
+                  <p className={css.overview}>{movieData.overview}</p>
                 </span>
 
                 <span>
@@ -95,26 +97,32 @@ const MovieDetailsPage = () => {
             </div>
 
             <div className={css.addInfo}>
-              <h3>Addition information:</h3>
-              <ul className={css.addLinks}>
-                <li>
-                  <NavLink className={getNavLinkClassNames} to='cast'>
-                    Cast
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={getNavLinkClassNames} to='reviews'>
-                    Reviews
-                  </NavLink>
-                </li>
+              <ul className={clsx(css.addLinks, css.addItems)}>
+                <div className={css.linkButtonContainer}>
+                  <li>
+                    <NavLink className={getNavLinkClassNames} to='cast'>
+                      <button className={css.linkButton} type='submit'>
+                        Cast
+                      </button>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className={getNavLinkClassNames} to='reviews'>
+                      <button className={css.linkButton} type='submit'>
+                        Reviews
+                      </button>
+                    </NavLink>
+                  </li>
+                </div>
               </ul>
             </div>
+
             <Suspense fallback={<Loader />}>
               <Outlet />
             </Suspense>
           </div>
         ) : (
-          <p className={css.infoMessage}>No data to display</p>
+          <p className={css.infoMessage}>Information is not found</p>
         ))}
     </>
   );

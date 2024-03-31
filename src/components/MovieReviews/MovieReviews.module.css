@@ -1,41 +1,31 @@
-.mainReviews {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
+.reviewsContainer {
+  text-align: center;
+  font-size: 24px;
 }
 
 .reviewsList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 
-.reviewItem {
-  padding: 24px;
-  height: auto;
-  background-color: rgba(255, 255, 0, 0.1);
-  border-radius: 15px;
-  border: 1px solid rgba(23, 40, 14, 0.1);
-  box-shadow: 20px 9px 20px 20px rgba(89, 127, 85, 0.03);
+.reviewsText {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-.reviewImg {
-  height: 80px;
-  width: fit-content;
-  border-radius: 50%;
-}
-
-.reviewContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 24px;
+.reviewsImages {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .infoMessage {
   padding: 5px 15px;
+  margin-left: 24px;
+  margin-right: 24px;
   display: block;
   font-size: 16px;
   background-color: rgba(205, 92, 92);

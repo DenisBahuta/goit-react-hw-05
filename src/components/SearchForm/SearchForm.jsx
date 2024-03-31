@@ -10,8 +10,15 @@ const SearchForm = ({ onSetSearchQuery, searchQuery }) => {
       }}
     >
       <Form className={css.formContainer}>
-        <Field placeholder='Movies' type='text' name='query' />
-        <button type='submit'>Search</button>
+        <Field
+          className={css.input}
+          placeholder='Movies'
+          type='text'
+          name='query'
+        />
+        <button className={css.link} type='submit'>
+          Search
+        </button>
       </Form>
     </Formik>
   );

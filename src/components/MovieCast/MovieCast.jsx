@@ -36,12 +36,10 @@ const MovieCast = () => {
     <div className={css.mainCast}>
       {isLoading && <Loader />}
       {isError && <ErrorMessage message={isError} />}
-      {!isLoading && !isError && casts.length === 0 && (
-        <ErrorMessage message='No cast information available.' />
-      )}
+      {!isLoading && !isError && casts.length === 0 && <ErrorMessage />}
 
       {casts.length > 0 && (
-        <ul className={css.listCast}>
+        <ul className={css.castList}>
           {casts.map(({ id, profile_path, name, character }) => (
             <li key={id} className={css.castsItem}>
               <img
@@ -54,8 +52,8 @@ const MovieCast = () => {
                 alt={name}
               />
               <div className={css.mainCast}>
-                <p>{name}</p>
-                <p>{character}</p>
+                <p className={css.actorName}>{name}</p>
+                <p className={css.characterName}>{character}</p>
               </div>
             </li>
           ))}

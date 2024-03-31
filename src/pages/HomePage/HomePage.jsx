@@ -31,7 +31,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className={css.movieMainPage}>
+    <div className={css.movieHome}>
       <h1>Trending today</h1>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}

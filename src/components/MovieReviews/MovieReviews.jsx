@@ -34,7 +34,7 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <div className={css.mainReviews}>
+      <div className={css.reviewsContainer}>
         {isLoading && <Loader />}
         {isError && <ErrorMessage />}
         {!isLoading &&
@@ -42,17 +42,17 @@ const MovieReviews = () => {
           (movieReviews.length ? (
             <ul className={css.reviewsList}>
               {movieReviews.map((review) => (
-                <li className={css.reviewItem} key={review.id}>
-                  <div className={css.reviewContent}>
+                <li key={review.id}>
+                  <div>
                     <img
-                      className={css.reviewImg}
+                      className={css.reviewsImages}
                       src={getImage(review.author_details.avatar_path)}
-                      width='120'
+                      width='180'
                       alt={review.author}
                     />
-                    <h3 className={css.reviewAuthor}>{review.author}</h3>
+                    <h3>{review.author}</h3>
                   </div>
-                  <p>{review.content}</p>
+                  <p className={css.reviewsText}>{review.content}</p>
                 </li>
               ))}
             </ul>

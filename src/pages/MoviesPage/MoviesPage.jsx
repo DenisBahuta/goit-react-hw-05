@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getSearchMovie } from "../../services/application";
-import css from "./MoviesPage.module.css";
 
 import MovieList from "../../components/MovieList/MovieList";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -52,7 +51,7 @@ const MoviesPage = () => {
       {isLoading && <Loader />}
 
       {!isError && !isLoading && movies.length > 0 && (
-        <div className={css.searchList}>
+        <div>
           <MovieList movies={movies} />
         </div>
       )}
